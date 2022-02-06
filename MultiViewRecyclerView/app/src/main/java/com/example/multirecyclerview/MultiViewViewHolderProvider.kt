@@ -13,7 +13,7 @@ class MultiViewViewHolderProvider {
         return if(viewHolderFactories[viewType] != null) {
             viewHolderFactories[viewType]!!.createInstance(parent,viewType)
         } else {
-            viewHolderTypes[viewType]!!.getConstructor(View::class.java).newInstance(LayoutInflater.from(parent.context).inflate(viewType, null))
+            viewHolderTypes[viewType]!!.getConstructor(View::class.java).newInstance(LayoutInflater.from(parent.context).inflate(viewType, parent, false))
         }
     }
 
