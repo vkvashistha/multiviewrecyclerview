@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.vkvashistha.multiviewrecyclerview.MultiViewRecyclerViewBuilder
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -12,11 +11,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        MultiViewRecyclerViewBuilder.of(findViewById(R.id.recyclerview))
-            .withViewHolderResource(R.layout.item_type1, ViewHolder1::class.java)
-            .withViewHolderResource(R.layout.item_type2, ViewHolder2::class.java)
-            .withViewHolderResource(R.layout.item_type3, ViewHolder3::class.java)
         val baseViewHolderProvider =
             com.vkvashistha.multiviewrecyclerview.MultiViewViewHolderProvider()
         baseViewHolderProvider.registerViewHolderClass(R.layout.item_type1, ViewHolder1::class.java)

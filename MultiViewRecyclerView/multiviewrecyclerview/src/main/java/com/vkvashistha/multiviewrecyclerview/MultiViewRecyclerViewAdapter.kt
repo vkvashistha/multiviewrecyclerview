@@ -3,7 +3,7 @@ package com.vkvashistha.multiviewrecyclerview
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 
-class MultiViewRecyclerViewAdapter(val viewHolderProvider: MultiViewViewHolderProvider) : ListAdapter<MultiViewItem, MultiViewViewHolder>(
+open class MultiViewRecyclerViewAdapter(val viewHolderProvider: MultiViewViewHolderProvider) : ListAdapter<MultiViewItem, MultiViewViewHolder>(
     ItemDiffCallback()
 ), MultiViewViewHolder.EventListener {
 

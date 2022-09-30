@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class MultiViewViewHolderProvider {
+open class MultiViewViewHolderProvider {
     private val viewHolderTypes : HashMap<Int, Class<out MultiViewViewHolder>> = HashMap()
     private val viewHolderFactories = HashMap<Int, MultiViewHolderFactory>()
 
