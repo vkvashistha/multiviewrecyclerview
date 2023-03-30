@@ -8,8 +8,11 @@ In above screenshot, we have 3 different types of ViewHolders : (1) Holding a si
 Read this article for more details :- https://medium.com/@vivekvashistha/clean-way-to-implement-multi-views-in-recycler-view-using-listadapter-4c49afa0da1
 
 ## Usage
-Step 1 : Add Jitpack repository in your build script
-```maven { url 'https://jitpack.io' }```
+Step 1 : Add Jitpack repository in your build script:
+
+```
+maven { url 'https://jitpack.io' }
+```
 
 Step 2 : Import the library
 ```
