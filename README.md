@@ -8,12 +8,15 @@ In above screenshot, we have 3 different types of ViewHolders : (1) Holding a si
 Read this article for more details :- https://medium.com/@vivekvashistha/clean-way-to-implement-multi-views-in-recycler-view-using-listadapter-4c49afa0da1
 
 ## Usage
-Step 1 : Import the library
+Step 1 : Add Jitpack repository in your build script
+```maven { url 'https://jitpack.io' }```
+
+Step 2 : Import the library
 ```
 implementation 'com.github.vkvashistha:multiviewrecyclerview:1.0.1'
 ```
 
-Step 2 : Create ViewHolder classes that extends MultiViewViewHolder. For e.g. ViewHolder1 can be implemented as follows:-
+Step 3 : Create ViewHolder classes that extends MultiViewViewHolder. For e.g. ViewHolder1 can be implemented as follows:-
 ```
 class ViewHolder1(itemView : View) : MultiViewViewHolder(itemView) {
     override fun onBindVewHolder(position: Int, multiViewItem: MultiViewItem) {
@@ -24,7 +27,7 @@ class ViewHolder1(itemView : View) : MultiViewViewHolder(itemView) {
     }
 }
 ```
-Step 3 : Register all ViewHolders alongwith their corresponding Layout files as follows:-
+Step 4 : Register all ViewHolders alongwith their corresponding Layout files as follows:-
 ```
 val viewHolderProvider =
 com.vkvashistha.multiviewrecyclerview.MultiViewViewHolderProvider()
@@ -32,14 +35,14 @@ viewHolderProvider.registerViewHolderClass(R.layout.item_type1, ViewHolder1::cla
 viewHolderProvider.registerViewHolderClass(R.layout.item_type2, ViewHolder2::class.java)
 viewHolderProvider.registerViewHolderClass(R.layout.item_type3, ViewHolder3::class.java)
 ```
-Step 4 : Setup Adapter
+Step 5 : Setup Adapter
 ```
 val _adapter = MultiViewRecyclerViewAdapter(viewHolderProvider)
 recyclerview.adapter = _adapter
 recyclerview.layoutManager = LinearLayoutManager(this)
 ```
 
-Step 5 : Wrap List items alongwith ViewHolder information as follows:-
+Step 6 : Wrap List items alongwith ViewHolder information as follows:-
 ```
 fun getSampleItemList() : ArrayList<com.vkvashistha.multiviewrecyclerview.MultiViewItem> {
 val list = ArrayList<com.vkvashistha.multiviewrecyclerview.MultiViewItem>()
@@ -70,7 +73,7 @@ val list = ArrayList<com.vkvashistha.multiviewrecyclerview.MultiViewItem>()
     }
 ```
 
-Step 6 : Submit wrapped list to adapter:-
+Step 7 : Submit wrapped list to adapter:-
 ```
 _adapter.submitList(getSampleItemList())
 ```
