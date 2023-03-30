@@ -11,7 +11,12 @@ Read this article for more details :- https://medium.com/@vivekvashistha/clean-w
 Step 1 : Add Jitpack repository in your build script:
 
 ```
-maven { url 'https://jitpack.io' }
+allprojects {
+    repositories {
+        // other repositories
+        maven { url 'https://jitpack.io' }
+    }
+}
 ```
 
 Step 2 : Import the library
